@@ -81,23 +81,6 @@ python scripts/main/05_evaluate_lineage.py --data-root workspace/reson_sd21_cano
 
 `05_evaluate_lineage.py` reports ROC-AUC, frozen-threshold TPR and realized FPR with 95% Wilson intervals, payload bit accuracy, CLIP similarity and clean-vs-watermarked FID. Use `--skip-clip --skip-fid` for detection metrics only. Every script documents its options with `--help`.
 
-## Other experiments
-
-| Paper result | Scripts |
-|---|---|
-| Table 1, SD2.0 source | `scripts/sd20/` |
-| Table 1, baselines | `baselines/regenerate_baseline_lineage.py`, then each method's evaluator in `baselines/` |
-| Table 2, lineage order: permutations of the canonical models (N = 300) | `scripts/lineage_order/generate_order_permutations.py`, `evaluate_lineage_subset.py` |
-| Table 2, lineage order: alternative generator chain | `scripts/lineage_order/launch_alternative_lineages.py`, `resume_alternative_orders_ab.py`, `evaluate_alternative_lineages.sh` |
-| Table 4, removal attacks | `scripts/removal_attacks/setup_watermarkattacker.sh`, `run_removal_attacks.py`, `evaluate_removal_attacks.py` |
-| Figure 5, perturbation sweeps | `scripts/perturbations/generate_perturbations.py`, `evaluate_perturbations.py` |
-| Table 5, Figure 7, carrier ablation | `scripts/carrier_ablation/run_carrier_mechanism_ablation_3gpu.py` |
-| Figure 3, operating point | `scripts/operating_point/` |
-| Table 8, payload capacity | `scripts/capacity/` |
-| Tables 10–11, Figure 6, multi-bit | `scripts/multibit/` |
-| Tables 9 and 13, quality | `scripts/quality/` |
-| Detection latency | `scripts/latency/benchmark_detection_latency.py` |
-
 ## Data
 
 Prompts come from the public [Stable-Diffusion-Prompts](https://huggingface.co/datasets/Gustavosta/Stable-Diffusion-Prompts) dataset; `reson/prompt_split.csv` fixes the prompts, seeds and train / validation / test split used in the paper. COCO 2014 validation captions and images are used only for FID. Generated images and checkpoints are not included in this repository.
