@@ -1,6 +1,8 @@
 # RESON: Persistent Watermarking Across Heterogeneous Generative Lineages
 
-Official code for **RESON** (under review at ICLR 2027) · [Project page](https://airesearchfolio.github.io/reson)
+[Project page](https://airesearchfolio.github.io/reson)
+
+Official code for **RESON** (under review at ICLR 2027) · 
 
 RESON is a generation-time latent watermark for **insert-once, detect-later** provenance. A keyed, message-bearing carrier is embedded **once** in the source diffusion noise. The watermark can then be detected directly from pixels after the image has been re-synthesized by a chain of different generators, with no reinsertion, no generator modification and no diffusion inversion.
 
